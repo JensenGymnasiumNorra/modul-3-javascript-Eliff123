@@ -6,10 +6,16 @@
     <title>Uppgift 1: Alert</title>
   </head>
   <body>
+    <input type="text" id="nameInput" placeholder="Skriv ditt namn här" />
     <button onclick="showAlert()">Click me for to be welcomed</button>
   </body>
 
   <script>
-    // TODO: Välkomna användaren med en alert när de klickar på knappen
+    function text() 
+    {
+      let name = document.getElementById('nameInput').value;
+      alert('Välkommen, ' + name + '!');
+    }
+   
   </script>
 </html>

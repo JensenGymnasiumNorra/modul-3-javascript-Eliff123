@@ -6,16 +6,22 @@
     <title>Uppgift 2: Buttons</title>
   </head>
   <body>
-    <!-- TODO: Lägg till 5 knappar, där en är korrekt och 4 är inkorrekta -->
+
+    <button onclick="showIncorrect()">Button 1</button>
+    <button onclick="showIncorrect()">Button 2</button>
+    <button onclick="showCorrect()">Button 3</button>
+    <button onclick="showIncorrect()">Button 4</button>
+    <button onclick="showIncorrect()">Button 5</button>
+
+    <script>
+      function showCorrect() {
+        alert("Correct!");
+      }
+
+      function showIncorrect() {
+        alert("Fel!");
+      }
+    </script>
+
   </body>
-
-  <script>
-    function showCorrect() {
-      alert("Correct!");
-    }
-
-    function showIncorrect() {
-      alert("Incorrect!");
-    }
-  </script>
 </html>

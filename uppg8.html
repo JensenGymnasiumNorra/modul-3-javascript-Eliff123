@@ -15,23 +15,66 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="weather.css">
-    <title>Conditional Statements Example</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conditional Statements Example</title>
 </head>
+
 <body>
+  <label for="GuessnumberSlider">Gissa talet</label>
+  <input type="range" id="GuessnumberSlider" min="0" max="100" value="50" />
+  <p id="selectedNumber">1 </p>
 
-    <label for="numberSlider">Select number</label>
-    <br>
-    <input type="range" id="valueSlider" min="0" max="100" value="25">
-    <br>
-    <span id="selectedNumber"></span>
-    <br>
-    <p id="hint"></p>
+  <label for="Slumpa">Bekräfta ditt nummber:</label>
+  <input type="button" id="Slumpa" value="gissa!" disabled />
+
+  <h1 id="Slumpat">Gör en gissning</h1>
+
+  <script>
+  
+  let GuessnumberSlider = document.getElementById("GuessnumberSlider");
+  let selectedNumber = document.getElementById("selectedNumber");
+  let weatherMessage = document.getElementById("weatherMessage");
+
+  let secretNumber = Math.floor(Math.random() * 101); 
+  console.log(" Rätt svar: " + secretNumber);
+
+  updateNummergissat(GuessnumberSlider.value);
+
+    GuessnumberSlider.addEventListener("change", function(){
+    let currentGuess = Number(GuessnumberSlider.value);
+    selectedNumber.innerHTML = currentGuess ;
+      updateNummergissat(currentGuess);
 
 
-    <script src="uppg8.js"></script>
+  });
+
+  function updateNummergissat(guess){
+    
+
+    if(GuessnumberSlider.value < secretNumber){
+      Nummergissat.innerHTML = "Talet är för lågt!";
+     
+     
+
+    }else if(GuessnumberSlider.value > secretNumber){
+      Nummergissat.innerHTML = "Talet är för högt!";
+          
+    }else{
+      Nummergissat.innerHTML = "Grattis! Du gissade rätt!";
+      Nummergissat.style.color = "Pink";
+    }
+
+
+
+
+  }
+
+
+
+  </script>
 </body>
+
 </html>

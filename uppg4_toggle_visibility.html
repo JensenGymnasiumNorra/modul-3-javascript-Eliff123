@@ -9,13 +9,15 @@
     <button onclick="toggleVisibility()">Toggle Visibility</button>
     <!-- TODO: Skapa ett element som visas/döljs när knappen klickas på -->
   </body>
+  <div id="ToggleText" style="display:none;">
+    <p>This text can be toggled visible or hidden.</p>
 
   <script>
     // Your script goes here
     function toggleVisibility() {
-      var element = document.getElementById("toggleElement");
-      element.style.display =
-        element.style.display === "none" ? "block" : "none";
+      let element = document.getElementById('ToggleText');
+      element.style.display = element.style.display === "none" ? "block" : "none";
+       
     }
   </script>
 </html>
