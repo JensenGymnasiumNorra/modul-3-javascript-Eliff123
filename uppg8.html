@@ -27,50 +27,63 @@
   <input type="range" id="GuessnumberSlider" min="0" max="100" value="50" />
   <p id="selectedNumber">1 </p>
 
-  <label for="Slumpa">Bekräfta ditt nummber:</label>
-  <input type="button" id="Slumpa" value="gissa!" disabled />
-
-  <h1 id="Slumpat">Gör en gissning</h1>
+  <button id="Slumpa">Gissa:</button>
+ 
+  <p id="Nummergissat"> </p>
+  
 
   <script>
   
   let GuessnumberSlider = document.getElementById("GuessnumberSlider");
   let selectedNumber = document.getElementById("selectedNumber");
-  let weatherMessage = document.getElementById("weatherMessage");
+  let gissaButton = document.getElementById("Slumpa");
+  let Nummergissat = document.getElementById("Nummergissat");
 
   let secretNumber = Math.floor(Math.random() * 101); 
   console.log(" Rätt svar: " + secretNumber);
 
-  updateNummergissat(GuessnumberSlider.value);
+  
+GuessnumberSlider.addEventListener("input", function(){
+    selectedNumber.innerText =  GuessnumberSlider.value; ;
 
-    GuessnumberSlider.addEventListener("change", function(){
-    let currentGuess = Number(GuessnumberSlider.value);
-    selectedNumber.innerHTML = currentGuess ;
-      updateNummergissat(currentGuess);
 
 
   });
 
-  function updateNummergissat(guess){
-    
 
-    if(GuessnumberSlider.value < secretNumber){
+
+
+
+  gissaButton.addEventListener("click", function(){
+    let guess = Number(GuessnumberSlider.value);
+
+    if(guess < secretNumber){
       Nummergissat.innerHTML = "Talet är för lågt!";
-     
-     
+      Nummergissat.style.color = "orange";  }
+       
 
-    }else if(GuessnumberSlider.value > secretNumber){
+
+    else if(guess > secretNumber){
       Nummergissat.innerHTML = "Talet är för högt!";
-          
-    }else{
-      Nummergissat.innerHTML = "Grattis! Du gissade rätt!";
-      Nummergissat.style.color = "Pink";
+          Nummergissat.style.color = "red";
     }
 
-
-
-
+     
+    
+    else{
+      Nummergissat.innerHTML = "Grattis! Du gissade rätt!";
+      Nummergissat.style.color = "Pink";
+    
+      secretNumber = Math.floor(Math.random() * 101); 
+     console.log(" Rätt svar: " + secretNumber);
+        alert("Du gissade korekkt!!!!!!!!" )
   }
+
+    
+
+}  );
+ 
+
 
 
 
