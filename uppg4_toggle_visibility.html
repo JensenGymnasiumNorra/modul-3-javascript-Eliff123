@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uppgift 4: Toggle Visibility</title>
-  </head>
-  <body>
-    <button onclick="toggleVisibility()">Toggle Visibility</button>
-    <!-- TODO: Skapa ett element som visas/döljs när knappen klickas på -->
-  </body>
-  <div id="ToggleText" style="display:none;">
-    <p>This text can be toggled visible or hidden.</p>
 
-  <script>
-    // Your script goes here
-    function toggleVisibility() {
-      let element = document.getElementById('ToggleText');
-      element.style.display = element.style.display === "none" ? "block" : "none";
-       
-    }
-  </script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uppgift 4: Toggle Visibility</title>
+</head>
+
+<body>
+  <button onclick="toggleVisibility()">Toggle Visibility</button>
+  <!-- TODO: Skapa ett element som visas/döljs när knappen klickas på -->
+
+
+<div id="ToggleText" style="display:none;">
+  <p>This text can be toggled visible or hidden.</p>
+</div>
+
+
+<script>
+  // Your script goes here
+  function toggleVisibility() {
+    let element = document.getElementById('ToggleText');
+    element.style.display = element.style.display === "none" ? "block" : "none";
+
+  }
+</script>
+</body>
 </html>
